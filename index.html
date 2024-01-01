@@ -45,9 +45,11 @@
 				display: block;	
 				visibility: hidden;
 				backdrop-filter: blur(0px);
-				transition: 0.3s;
+				transition: 0.5s;
 				text-align: center;
 				padding: auto;
+				background-color: rgba(255,255,255,0.5);
+				opacity: 0;
 			}
 
 			#menu-div > div {
@@ -74,7 +76,7 @@
 		<div id="menu-div">
 			<div>
 				<button>About Me</button>
-				<button>Go Back</button>
+				<button onclick="hideMenu()">Go Back</button>
 			</div>
 		</div>
 		<button onclick="showMenu()" id="menu-button">Menu</button>
