@@ -27,6 +27,7 @@ const cube = new THREE.Mesh(geometry, material)
 cube.position.set(0, 0.5, -10)
 scene.add(cube)
 
+//Adding Event Listeners to DOM
 window.addEventListener('resize', onWindowResize, false)
 function onWindowResize() {
     camera.aspect = window.innerWidth / window.innerHeight
@@ -34,6 +35,43 @@ function onWindowResize() {
     renderer.setSize(window.innerWidth, window.innerHeight)
     render()
 }
+
+//Adding Event Listeners To Home section 
+document.getElementById('home-input').addEventListener("click", function() {
+	document.documentElement.scrollTop = 0;
+	document.body.scrollTop = 0;
+	scrollPercent = 0;
+}, false)
+
+//Adding Event Listener To Purpose section
+document.getElementById('purpose-input').addEventListener("click", function() {
+	document.documentElement.scrollTop = 159;
+	document.body.scrollTop = 159;
+	scrollPercent = 20;
+}, false)
+
+//Adding Event Listener To Organization
+document.getElementById('organization-input').addEventListener("click", function() {
+	document.documentElement.scrollTop = 318;
+	document.body.scrollTop = 318;
+	scrollPercent = 40;
+}, false)
+
+//Adding Event Listner To Team Section
+document.getElementById('team-input').addEventListener("click", function() {
+}, false)
+
+//Adding Event Listener To About Me Section
+document.getElementById('about-me-input').addEventListener("click", function() {
+}, false)
+
+//Adding Event Listener to Contact Section
+document.getElementById('contact-input').addEventListener("click", function() {
+}, false)
+
+
+
+
 
 /* Liner Interpolation
  * lerp(min, max, ratio)
@@ -132,9 +170,9 @@ document.body.onscroll = () => {
             ((document.documentElement.scrollHeight ||
                 document.body.scrollHeight) -
                 document.documentElement.clientHeight)) *
-        100
-    ;(document.getElementById('scrollProgress')).innerText =
-        'Scroll Progress : ' + scrollPercent.toFixed(2)
+        100;
+
+	console.log(document.documentElement.scrollTop);
 }
 
 const stats = new Stats()
